@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: man-socios
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: cineplanet
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    status-page-url-path: man_socios
+
+server:
+  port: 8092

@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: man-socios-respaldo
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/cineplanetadb
+    username: facer
+    password: fantasma
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    #definir dialecto mysql para hibernate
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        ddl-auto: create-drop
+
+    show-sql: true
+
+    # Estrategia de nombres
+    spring:
+      jpa:
+        hibernate:
+          naming:
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+server:
+  port: 8095
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
